@@ -1,0 +1,20 @@
+--feladat1
+select *,
+--uj oszlop
+IIF(MONTH(METTOL)IN (6,7,8),'igen','Nem') as 'Nyári_e'
+from Foglalas
+where UGYFEL_FK = 'laszlo2' and gyermek_szam = 0
+
+
+
+--feladat2
+select  szh.TiPUS,
+    YEAR(f.METTOL) as 'ÉV',
+    MONTH (f.METTOL) as 'Hónap',
+    --
+from Foglalas f JOIN Szoba sz ON  f.SZOBA_FK=sz.SZOBA_ID
+JOIN szallashely szh --
+where -- >=5
+group by sz.TIPUS, --
+
+--feladat3
